@@ -319,8 +319,9 @@ class cfgVehicles
     respawnLinkedItems[]={"ItemMap","ItemCompass","ItemWatch","ItemRadio","VES_NVG_COLLAR","VES_CH252_URB_Radio","VES_M52A_URB_Rifleman_C","OPTRE_HUD_g_Glasses"};
     backpack="OPTRE_ANPRC_521_Black";
   };
-  
+	
 	class LandVehicle;
+	class OPTRE_M12_LRV;
 	class Tank: LandVehicle
 	{
 		class NewTurret;
@@ -366,6 +367,26 @@ class cfgVehicles
 	};
 	class OPTRE_M494: APC_Tracked_03_base_F
 	{
+	};
+	class 6th_M12LRV: OPTRE_M12_LRV
+	{
+		author="6th STB S-5";
+		scope=2;
+		scopeCurator=2;
+		displayName="[6th] M12 LRV (Jungle)";
+		faction="6STB_6th_Shock_Trooper_Battalion";
+		editorCategory="6th_Shock_Trooper_Battalion";
+		editorSubcategory="6STB_Mechanized";
+		hiddenSelectionsTextures[]=
+		{
+			"Vehicles\Warthog\ATACSFG\M12_Tombstone_Jungle_Upper.paa",
+			"Vehicles\Warthog\Base\M12_Base_Lower.paa",
+			"Vehicles\Warthog\ATACSFG\M12_Jungle_Turret.paa",
+			"\OPTRE_Vehicles\warthog\data\decals_ca.paa",
+			"\OPTRE_Vehicles\warthog\data\m12hogmaav_interior_co.paa",
+			"\OPTRE_Vehicles\warthog\data\turrets\m12_turret_decals_ca.paa",
+			"\OPTRE_Vehicles\warthog\data\turrets\sight_co.paa"
+		};
 	};
 	class 6th_Oryx: OPTRE_M494
 	{
