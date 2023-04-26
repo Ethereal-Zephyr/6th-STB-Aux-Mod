@@ -2289,14 +2289,14 @@ class CfgWeapons
 				//"AP_MGThigh",	//Big Pouch right side of right thigh
 				//"A_ODST",		//ODST Extra Plate and bracers
 				//"A_TacPad",		//Tacpad on left wrist
-				//"AP_Rounds",	//Sniper Rounds on left shoulder plate
+				"AP_Rounds",	//Sniper Rounds on left shoulder plate
 				//"A_ChestArmor",	//Base Armor plate
 				"AP_AR",	//3x Marine Assault Rifle Magazines
 				"AP_BR",	//3x Marine Battle Rifle Magazines
 				//"AP_Canteen",	//Canteen on left hip
 				//"AP_Frag",	//Right side hip frag grenade
 				//"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
+				"AP_Knife",	//Chest Knife, left collar
 				"AP_Pack",	//Marine Chest Pack
 				"AP_Pistol",	//Pistol Mags Right Hip
 				"AP_SG",	//Shotgun Shells Right Shoulder Front
