@@ -38,6 +38,16 @@ class CfgWeapons
 		scope=2;
 		scopeArsenal=2;
 		displayName="[6th] ODST Helmet";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"H_Ghillie",
+			//"H_Collar",
+			//"H_Neck",
+		};
 		hiddenSelectionsTextures[]=
 		{
 			"Helmets\Textures\ODST_Helmet.paa",
@@ -161,7 +171,7 @@ class CfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"Helmets\Textures\Drengr_Helmet.paa",
-			"Helmets\Textures\R_Walker_Visor.paa"
+			"Helmets\Textures\Drengr_Visor.paa"
 		};
 	};
 	class Drengr_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
@@ -259,6 +269,11 @@ class CfgWeapons
 			"Helmets\Textures\R_Walker_Helmet.paa",
 			"Helmets\Textures\R_Walker_Visor.paa"
 		};
+		hiddenSelectionsMaterials[] =
+		{
+			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
+			"Helmets\Textures\Materials\VG_2.RVMAT"
+        };
 	};
 	class R_Walker_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
 	{
@@ -379,6 +394,11 @@ class CfgWeapons
 			"Helmets\Textures\Justinian_Helmet.paa",
 			"Helmets\Textures\Justinian_Visor.paa"
 		};
+		hiddenSelectionsMaterials[] =
+		{
+			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
+			"Helmets\Textures\Materials\VG_2.RVMAT"
+        };
 	};
 	class Justinian_Helmet_dp: VES_CH252A_dp
 	{
@@ -426,6 +446,11 @@ class CfgWeapons
 		{
 			"Helmets\Textures\J_Long_Helmet.paa",
 			"Helmets\Textures\J_Long_Visor.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
+			"Helmets\Textures\Materials\visor.rvmat"
 		};
 	};
 	class J_Long_Helmet_dp: TCF_Reach_Scout_Helmet
@@ -497,7 +522,7 @@ class CfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"Helmets\Textures\J_Kraken_Helmet.paa",
-			"Helmets\Textures\Drengr_Visor.paa"
+			"Helmets\Textures\J_Kraken_Visor.paa"
 		};
 	};
 	class J_Kraken_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
@@ -521,7 +546,7 @@ class CfgWeapons
 		hiddenSelectionsTextures[]=
 		{
 			"Helmets\Textures\S_Orm_Helmet.paa",
-			"Helmets\Textures\Drengr_Visor.paa"
+			"Helmets\Textures\S_Orm_Visor.paa"
 		};
 	};
 	class S_Orm_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
@@ -643,6 +668,10 @@ class CfgWeapons
 			"Helmets\Textures\Ranger_Helmet.paa",
 			"Helmets\Textures\Ranger_Visor.paa"
 		};
+		{
+			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
+			"Helmets\Textures\Materials\visor.rvmat"
+		};
 	};
 	class Ranger_Helmet_dp: TCF_Reach_Scout_Helmet
 	{
@@ -691,6 +720,11 @@ class CfgWeapons
 			"Helmets\Textures\C_Cherryy_Helmet.paa",
 			"Helmets\Textures\C_Cherryy_Visor.paa"
 		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
+			"Helmets\Textures\Materials\visor.rvmat"
+		};
 	};
 	class C_Cherryy_Helmet_dp: TCF_Reach_Scout_Helmet
 	{
@@ -702,6 +736,69 @@ class CfgWeapons
 		{
 			"Helmets\Textures\C_Cherryy_Helmet.paa",
 			"Helmets\Textures\C_Cherryy_Visor.paa"
+		};
+		hiddenSelectionsMaterials[]=
+		{
+			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
+			"Helmets\Textures\Materials\visor.rvmat"
+		};
+	};
+	class S_Overture_Helmet: OPTRE_UNSC_CH252D_Helmet
+	{
+		author="6th STB S-5";
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Custom Helmet (S. Overture)";
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\S_Overture_Helmet.paa",
+			"Helmets\Textures\S_Overture_Visor.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
+			"Helmets\Textures\Materials\VG_2.RVMAT"
+        };
+	};
+	class S_Overture_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	{
+				author="6th STB S-5";
+		scope=1;
+		scopeArsenal=1;
+		displayName="[6th] Custom Helmet (S. Overture)";
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\S_Overture_Helmet.paa",
+			"Helmets\Textures\ODST_Clear_Visor.paa"
+		};
+	};
+	class Templar_Helmet: OPTRE_UNSC_CH252D_Helmet
+	{
+		author="6th STB S-5";
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Templar Helmet";
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Templar_Helmet.paa",
+			"Helmets\Textures\Templar_Visor.paa"
+		};
+		hiddenSelectionsMaterials[] =
+		{
+			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
+			"Helmets\Textures\Materials\VG_2.RVMAT"
+        };
+	};
+	class Templar_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	{
+				author="6th STB S-5";
+		scope=1;
+		scopeArsenal=1;
+		displayName="[6th] Templar Helmet";
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Templar_Helmet.paa",
+			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
 };
