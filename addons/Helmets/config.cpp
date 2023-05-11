@@ -32,7 +32,7 @@ class CfgWeapons
 	class VES_S1ONIR_dp;
 	class H_HelmetCrew_B;
 	class OPTRE_Helmet_NavyDeckCrew;
-	class ODST_Base: OPTRE_UNSC_CH252D_Helmet
+	class ODST_Base: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -54,7 +54,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Black_Visor.paa"
 		};
 	};
-	class ODST_Base_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class ODST_Base_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -66,7 +66,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Tombstone_Company_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Tombstone_Company_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -78,7 +78,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Black_Visor.paa"
 		};
 	};
-	class Tombstone_Company_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Tombstone_Company_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -90,7 +90,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Tombstone_NCO_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Tombstone_NCO_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -102,7 +102,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Black_Visor.paa"
 		};
 	};
-	class Tombstone_NCO_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Tombstone_NCO_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -114,7 +114,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Tombstone_Medic_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Tombstone_Medic_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -126,7 +126,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Black_Visor.paa"
 		};
 	};
-	class Tombstone_Medic_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Tombstone_Medic_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -138,7 +138,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Anvil_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Anvil_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -150,7 +150,7 @@ class CfgWeapons
 			"Helmets\Textures\Anvil_Visor.paa"
 		};
 	};
-	class Anvil_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Anvil_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -162,7 +162,7 @@ class CfgWeapons
 			"Helmets\Textures\C_Anvil_Visor.paa"
 		};
 	};
-	class Drengr_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Drengr_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -174,7 +174,7 @@ class CfgWeapons
 			"Helmets\Textures\Drengr_Visor.paa"
 		};
 	};
-	class Drengr_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Drengr_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -186,8 +186,8 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Phoenix_Helmet: OPTRE_UNSC_CH252D_Helmet
-	{
+	class Phoenix_Helmet: VES_CH252D
+	{	
 		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
@@ -198,7 +198,7 @@ class CfgWeapons
 			"Helmets\Textures\R_Walker_Visor.paa"
 		};
 	};
-	class Phoenix_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Phoenix_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -210,7 +210,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class A_Avalanche_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class A_Avalanche_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -222,7 +222,7 @@ class CfgWeapons
 			"Helmets\Textures\A_Avalanche_Visor.paa"
 		};
 	};
-	class A_Avalanche_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class A_Avalanche_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -234,7 +234,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class S_Marbo_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class S_Marbo_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -246,7 +246,7 @@ class CfgWeapons
 			"Helmets\Textures\S_Marbo_Visor.paa"
 		};
 	};
-	class S_Marbo_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class S_Marbo_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -258,7 +258,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class R_Walker_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class R_Walker_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -275,7 +275,7 @@ class CfgWeapons
 			"Helmets\Textures\Materials\VG_2.RVMAT"
         };
 	};
-	class R_Walker_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class R_Walker_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -287,7 +287,7 @@ class CfgWeapons
 			"Helmets\Textures\C_R_Walker1_Visor.paa"
 		};
 	};
-	class J_Leero_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class J_Leero_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -299,7 +299,7 @@ class CfgWeapons
 			"Helmets\Textures\J_Leero_Visor.paa"
 		};
 	};
-	class J_Leero_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class J_Leero_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -311,7 +311,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class R_Kay_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class R_Kay_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -323,7 +323,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Black_Visor.paa"
 		};
 	};
-	class R_Kay_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class R_Kay_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -359,7 +359,7 @@ class CfgWeapons
 			"Helmets\Textures\C_R_Walker_Visor.paa"
 		};
 	};
-	class H_Lucas_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class H_Lucas_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -371,7 +371,7 @@ class CfgWeapons
 			"Helmets\Textures\H_Lucas_Visor.paa"
 		};
 	};
-	class H_Lucas_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class H_Lucas_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -412,7 +412,7 @@ class CfgWeapons
 			"Helmets\Textures\AA_Clear_Visor.paa"
 		};
 	};
-	class M_Munchlax_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class M_Munchlax_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -424,7 +424,7 @@ class CfgWeapons
 			"Helmets\Textures\M_Munchlax_Visor.paa"
 		};
 	};
-	class M_Munchlax_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class M_Munchlax_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -465,7 +465,7 @@ class CfgWeapons
 			"Helmets\Textures\J_Long_Visor.paa"
 		};
 	};
-	class M_Kong_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class M_Kong_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -477,7 +477,7 @@ class CfgWeapons
 			"Helmets\Textures\M_Kong_Visor.paa"
 		};
 	};
-	class M_Kong_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class M_Kong_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -489,7 +489,7 @@ class CfgWeapons
 			"Helmets\Textures\C_M_Kong_Visor.paa"
 		};
 	};
-	class M_Justinian_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class M_Justinian_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -501,7 +501,7 @@ class CfgWeapons
 			"Helmets\Textures\M_Justinian_Visor.paa"
 		};
 	};
-	class M_Justinian_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class M_Justinian_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -513,7 +513,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class J_Kraken_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class J_Kraken_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -525,7 +525,7 @@ class CfgWeapons
 			"Helmets\Textures\J_Kraken_Visor.paa"
 		};
 	};
-	class J_Kraken_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class J_Kraken_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -537,7 +537,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class S_Orm_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class S_Orm_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -549,7 +549,7 @@ class CfgWeapons
 			"Helmets\Textures\S_Orm_Visor.paa"
 		};
 	};
-	class S_Orm_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class S_Orm_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -561,7 +561,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class M_Hatter_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class M_Hatter_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -573,7 +573,7 @@ class CfgWeapons
 			"Helmets\Textures\M_Hatter_Visor.paa"
 		};
 	};
-	class M_Hatter_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class M_Hatter_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -668,6 +668,7 @@ class CfgWeapons
 			"Helmets\Textures\Ranger_Helmet.paa",
 			"Helmets\Textures\Ranger_Visor.paa"
 		};
+		hiddenSelectionsMaterials[] =
 		{
 			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
 			"Helmets\Textures\Materials\visor.rvmat"
@@ -685,7 +686,7 @@ class CfgWeapons
 			"Helmets\Textures\Ranger_Visor.paa"
 		};
 	};
-			class A_Chelkar_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class A_Chelkar_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -697,7 +698,7 @@ class CfgWeapons
 			"Helmets\Textures\A_Chelkar_Visor.paa"
 		};
 	};
-	class A_Chelkar_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class A_Chelkar_Helmet_dp: VES_CH252D_dp
 	{
 		author="6th STB S-5";
 		scope=1;
@@ -743,7 +744,7 @@ class CfgWeapons
 			"Helmets\Textures\Materials\visor.rvmat"
 		};
 	};
-	class S_Overture_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class S_Overture_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -760,7 +761,7 @@ class CfgWeapons
 			"Helmets\Textures\Materials\VG_2.RVMAT"
         };
 	};
-	class S_Overture_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class S_Overture_Helmet_dp: VES_CH252D_dp
 	{
 				author="6th STB S-5";
 		scope=1;
@@ -772,7 +773,7 @@ class CfgWeapons
 			"Helmets\Textures\ODST_Clear_Visor.paa"
 		};
 	};
-	class Templar_Helmet: OPTRE_UNSC_CH252D_Helmet
+	class Templar_Helmet: VES_CH252D
 	{
 		author="6th STB S-5";
 		scope=2;
@@ -789,7 +790,7 @@ class CfgWeapons
 			"Helmets\Textures\Materials\VG_2.RVMAT"
         };
 	};
-	class Templar_Helmet_dp: OPTRE_UNSC_CH252D_Helmet_dp
+	class Templar_Helmet_dp: VES_CH252D_dp
 	{
 				author="6th STB S-5";
 		scope=1;
