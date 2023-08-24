@@ -8,10 +8,121 @@ class CfgPatches
 		units[]={};
 		weapons[]=
 		{
-			"9th_Armored_Helmet_Base"
 		};
 	};
 };
+
+class XtdGearModels
+{
+	class CfgWeapons
+	{
+		class 6th_Standard_Helmets
+		{
+			label = "[6th] M56SR Squad Variants";
+			author = "6STB Dev Team";
+			options[] = {"Variant"};
+			class Variant
+			{
+				values[] = {"Command","Phoenix","Spectre","Templar","Ranger"};
+				class Command
+				{
+					label = "Command";
+				};
+				class Phoenix
+				{
+					label = "Phoenix";
+				};
+				class Phoenix_C
+				{
+					label = "Phoenix (C)";
+				};
+				class Spectre
+				{
+					label = "Spectre";
+				};
+				class Spectre_C
+				{
+					label = "Spectre (C)";
+				};
+				class Templar
+				{
+					label = "Templar";
+				};
+				class Templar_C
+				{
+					label = "Templar (C)";
+				};
+				class Ranger
+				{
+					label = "Ranger";
+				};
+			};
+		};
+		class 6th_Custom_Helmets
+		{
+			label = "[6th] M56SR Custom Variants";
+			author = "6STB Dev Team";
+			options[] = {"Variant"};
+			class Variant
+			{
+				values[] = {"Cherryy","Leer","Delt","Gillian","Mango","Hatt","Jengus","Melo","Walker","Munchlax","Angoth","Doyle","Justinian"};
+				class Cherryy
+				{
+					label = "Cherryy";
+				};
+				class Leer
+				{
+					label = "Leer";
+				};
+				class Delt
+				{
+					label = "Delt";
+				};
+				class Gillian
+				{
+					label = "Gillian";
+				};
+				class Mango
+				{
+					label = "Mango";
+				};
+				class Hatt
+				{
+					label = "Hatt";
+				};
+				class Jengus
+				{
+					label = "Jengus";
+				};
+				class Melo
+				{
+					label = "Melo";
+				};
+				class Walker
+				{
+					label = "Walker";
+				};
+				class Munchlax
+				{
+					label = "Munchlax";
+				};
+				class Angoth
+				{
+					label = "Angoth";
+				};
+				class Doyle
+				{
+					label = "Doyle";
+				};
+				class Justinian
+				{
+					label = "Justinian";
+				};
+			};
+		};
+	};
+};
+
 class CfgWeapons
 {
 	class HeadgearItem;
@@ -20,786 +131,516 @@ class CfgWeapons
 	class VestItem;
 	class Uniform_Base;
 	class UniformItem;
-	class TCF_Reach_Scout_Helmet;
-	class VES_M52D_Rifleman;
-	class OPTRE_UNSC_CH252D_Helmet;
-	class OPTRE_UNSC_CH252D_Helmet_dp;
-	class VES_CH252A;
-	class VES_CH252A_dp;
-	class VES_CH252D;
-	class VES_CH252D_dp;
-	class VES_S1ONIR;
-	class VES_S1ONIR_dp;
-	class H_HelmetCrew_B;
-	class OPTRE_Helmet_NavyDeckCrew;
-	class ODST_Base: VES_CH252D
+	class MA_Helmet_Base;
+	
+	class MA_M56SR_Helmet: MA_Helmet_Base
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] ODST Helmet";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"H_Ghillie",
-			//"H_Collar",
-			//"H_Neck",
-		};
+		displayName="[MA] M56S-R Helmet";
+		model="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+		picture="MA_Armor\data\Icons\Halo_Reach_ODST_Helmet.paa";
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\ODST_Helmet.paa",
-			"Helmets\Textures\ODST_Black_Visor.paa"
+			"MA_Armor\data\Helmets\HR_ODST\HR_ODST_Helmet_CO.paa",
+			"MA_Armor\data\Helmets\HR_ODST\HR_ODST_Visor_Blue_co.paa"
 		};
-	};
-	class ODST_Base_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] ODST Helmet";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\ODST_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Helmets\HR_ODST\HR_ODST_Helmet_CO.paa",
+				"MA_Armor\data\Helmets\HR_ODST\HR_ODST_Visor_Blue_co.paa"
+			};
 		};
 	};
-	class Tombstone_Company_Helmet: VES_CH252D
+	class MA_M56A_Helmet: MA_Helmet_Base
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone Company";
+		displayName="[MA] M56-A Helmet";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Tombstone_Company_Helmet.paa",
-			"Helmets\Textures\ODST_Black_Visor.paa"
+			"MA_Armor\data\Helmets\AA\AA_Helm_co.paa",
+			"MA_Armor\data\Helmets\AA\AA_Visor_Blue_co.paa"
 		};
-	};
-	class Tombstone_Company_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Tombstone Company";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\Tombstone_Company_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Helmets\AA\AA_Helm_co.paa",
+				"MA_Armor\data\Helmets\AA\AA_Visor_Blue_co.paa"
+			};
 		};
 	};
-	class Tombstone_NCO_Helmet: VES_CH252D
+	
+	//Valkyrie Helmets
+	class Valkyrie_Walker_Helmet: MA_M56A_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO";
+		displayName="[6th] Valkyrie Helmet (Walker)";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Walker";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Tombstone_NCO_Helmet.paa",
-			"Helmets\Textures\ODST_Black_Visor.paa"
+			"Helmets\Textures\Valkyrie\Walker_H",
+			"Helmets\Textures\Valkyrie\Walker_V"
 		};
-	};
-	class Tombstone_NCO_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Tombstone NCO";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\Tombstone_NCO_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Valkyrie\Walker_H",
+				"Helmets\Textures\Valkyrie\Walker_V"
+			};
 		};
 	};
-	class Tombstone_Medic_Helmet: VES_CH252D
+	class Valkyrie_Munchlax_Helmet: MA_M56A_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone Medic";
+		displayName="[6th] Valkyrie Helmet (Munchlax)";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Munchlax";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Tombstone_Medic_Helmet.paa",
-			"Helmets\Textures\ODST_Black_Visor.paa"
+			"Helmets\Textures\Valkyrie\Munchlax_H",
+			"Helmets\Textures\Valkyrie\Munchlax_V"
 		};
-	};
-	class Tombstone_Medic_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Tombstone Medic";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\Tombstone_MEdic_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Valkyrie\Munchlax_H",
+				"Helmets\Textures\Valkyrie\Munchlax_V"
+			};
 		};
 	};
-	class Anvil_Helmet: VES_CH252D
+	class Valkyrie_Angoth_Helmet: MA_M56A_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Anvil Squad Helmet";
+		displayName="[6th] Valkyrie Helmet (Angoth)";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Angoth";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Anvil_Helmet.paa",
-			"Helmets\Textures\Anvil_Visor.paa"
+			"Helmets\Textures\Valkyrie\Angoth_H",
+			"Helmets\Textures\Valkyrie\Angoth_V"
 		};
-	};
-	class Anvil_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Anvil Squad Helmet";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\Anvil_Helmet.paa",
-			"Helmets\Textures\C_Anvil_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Valkyrie\Angoth_H",
+				"Helmets\Textures\Valkyrie\Angoth_V"
+			};
 		};
 	};
-	class Drengr_Helmet: VES_CH252D
+	class Valkyrie_Doyle_Helmet: MA_M56A_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Drengr Squad Helmet";
+		displayName="[6th] Valkyrie Helmet (Doyle)";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Doyle";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Drengr_Helmet.paa",
-			"Helmets\Textures\Drengr_Visor.paa"
+			"Helmets\Textures\Valkyrie\Doyle_H",
+			"Helmets\Textures\Valkyrie\Doyle_V"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Valkyrie\Doyle_H",
+				"Helmets\Textures\Valkyrie\Doyle_V"
+			};
 		};
 	};
-	class Drengr_Helmet_dp: VES_CH252D_dp
+	class Valkyrie_Justinian_Helmet: MA_M56A_Helmet
 	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Drengr Squad Helmet";
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Valkyrie Helmet (Justinian)";
+		model="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+		picture="MA_Armor\data\Icons\AA_Helmet.paa";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Justinian";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Drengr_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			"Helmets\Textures\Valkyrie\Justinian_H",
+			"Helmets\Textures\Valkyrie\Justinian_V"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\AA\AA_Helmet.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Valkyrie\Justinian_H",
+				"Helmets\Textures\Valkyrie\Justinian_V"
+			};
 		};
 	};
-	class Phoenix_Helmet: VES_CH252D
-	{	
-		author="6th STB S-5";
+	
+	//Tombstone Armors
+	class Command_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Tombstone Command Helmet";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Helmets";
+			Variant="Command";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Command\TC_H.paa",
+			"Helmets\Textures\Tombstone\Command\TC_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Command\TC_H.paa",
+				"Helmets\Textures\Tombstone\Command\TC_V.paa"
+			};
+		};
+	};
+	class Spectre_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Spectre Squad Helmet";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Helmets";
+			Variant="Spectre";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Spectre\Spectre_H.paa",
+			"Helmets\Textures\Tombstone\Spectre\Spectre_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Spectre\Spectre_H.paa",
+				"Helmets\Textures\Tombstone\Spectre\Spectre_V.paa"
+			};
+		};
+	};
+	class Templar_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Templar Squad Helmet";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Helmets";
+			Variant="Templar";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Templar\Templar_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Templar_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+			};
+		};
+	};
+	class Phoenix_Helmet: MA_M56SR_Helmet
+	{
 		scope=2;
 		scopeArsenal=2;
 		displayName="[6th] Phoenix Squad Helmet";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Helmets";
+			Variant="Phoenix";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Phoenix_Helmet.paa",
-			"Helmets\Textures\R_Walker_Visor.paa"
+			"Helmets\Textures\Tombstone\Phoenix\Phoenix_H.paa",
+			"Helmets\Textures\Tombstone\Phoenix\Phoenix_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Phoenix\Phoenix_H.paa",
+				"Helmets\Textures\Tombstone\Phoenix\Phoenix_V.paa"
+			};
 		};
 	};
-	class Phoenix_Helmet_dp: VES_CH252D_dp
+	class Ranger_Helmet: MA_M56SR_Helmet
 	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Phoenix Squad Helmet";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Phoenix_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class A_Avalanche_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (A. Avalanche)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\A_Avalanche_Helmet.paa",
-			"Helmets\Textures\A_Avalanche_Visor.paa"
-		};
-	};
-	class A_Avalanche_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (A. Avalanche)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\A_Avalanche_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class S_Marbo_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (S. Marbo)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\S_Marbo_Helmet.paa",
-			"Helmets\Textures\S_Marbo_Visor.paa"
-		};
-	};
-	class S_Marbo_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (S. Marbo)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\S_Marbo_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class R_Walker_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (R. Walker)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\R_Walker_Helmet.paa",
-			"Helmets\Textures\R_Walker_Visor.paa"
-		};
-		hiddenSelectionsMaterials[] =
-		{
-			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
-			"Helmets\Textures\Materials\VG_2.RVMAT"
-        };
-	};
-	class R_Walker_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (R. Walker)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\R_Walker_Helmet.paa",
-			"Helmets\Textures\C_R_Walker1_Visor.paa"
-		};
-	};
-	class J_Leero_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (J. Leero)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Leero_Helmet.paa",
-			"Helmets\Textures\J_Leero_Visor.paa"
-		};
-	};
-	class J_Leero_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (J. Leero)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Leero_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class R_Kay_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (R. Kay)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\R_Kay_Helmet.paa",
-			"Helmets\Textures\ODST_Black_Visor.paa"
-		};
-	};
-	class R_Kay_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (R. Kay)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\R_Kay_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class Walker_AA_Helmet: VES_CH252A
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Icarus Helmet (R. Walker)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Walker_AA_Helmet.paa",
-			"Helmets\Textures\Walker_AA_Visor.paa"
-		};
-	};
-	class Walker_AA_Helmet_dp: VES_CH252A_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Icarus Helmet (R. Walker)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Walker_AA_Helmet.paa",
-			"Helmets\Textures\C_R_Walker_Visor.paa"
-		};
-	};
-	class H_Lucas_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (H. Lucas)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\H_Lucas_Helmet.paa",
-			"Helmets\Textures\H_Lucas_Visor.paa"
-		};
-	};
-	class H_Lucas_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (H. Lucas)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\H_Lucas_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class Justinian_Helmet: VES_CH252A
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Ranger Helmet (Justinian)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Justinian_Helmet.paa",
-			"Helmets\Textures\Justinian_Visor.paa"
-		};
-		hiddenSelectionsMaterials[] =
-		{
-			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
-			"Helmets\Textures\Materials\VG_2.RVMAT"
-        };
-	};
-	class Justinian_Helmet_dp: VES_CH252A_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Ranger Helmet)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Justinian_Helmet.paa",
-			"Helmets\Textures\AA_Clear_Visor.paa"
-		};
-	};
-	class M_Munchlax_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (M. Munchlax)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Munchlax_Helmet.paa",
-			"Helmets\Textures\M_Munchlax_Visor.paa"
-		};
-	};
-	class M_Munchlax_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (M. Munchlax)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Munchlax_Helmet.paa",
-			"Helmets\Textures\C_M_Munchlax_Visor.paa"
-		};
-	};
-	class J_Long_Helmet: TCF_Reach_Scout_Helmet
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (J. Long)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Long_Helmet.paa",
-			"Helmets\Textures\J_Long_Visor.paa"
-		};
-		hiddenSelectionsMaterials[]=
-		{
-			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
-			"Helmets\Textures\Materials\visor.rvmat"
-		};
-	};
-	class J_Long_Helmet_dp: TCF_Reach_Scout_Helmet
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (J. Long)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Long_Helmet.paa",
-			"Helmets\Textures\J_Long_Visor.paa"
-		};
-	};
-	class M_Kong_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (M. Kong)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Kong_Helmet.paa",
-			"Helmets\Textures\M_Kong_Visor.paa"
-		};
-	};
-	class M_Kong_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (M. Kong)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Kong_Helmet.paa",
-			"Helmets\Textures\C_M_Kong_Visor.paa"
-		};
-	};
-	class M_Justinian_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (M. Justinian)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Justinian_Helmet.paa",
-			"Helmets\Textures\M_Justinian_Visor.paa"
-		};
-	};
-	class M_Justinian_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (M. Justinian)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Justinian_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class J_Kraken_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (J. Kraken)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Kraken_Helmet.paa",
-			"Helmets\Textures\J_Kraken_Visor.paa"
-		};
-	};
-	class J_Kraken_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (J. Kraken)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\J_Kraken_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class S_Orm_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (S. Orm)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\S_Orm_Helmet.paa",
-			"Helmets\Textures\S_Orm_Visor.paa"
-		};
-	};
-	class S_Orm_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (S. Orm)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\S_Orm_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class M_Hatter_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (M. Hatter)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Hatter_Helmet.paa",
-			"Helmets\Textures\M_Hatter_Visor.paa"
-		};
-	};
-	class M_Hatter_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (M. Hatter)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\M_Hatter_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
-		};
-	};
-	class Pathfinder_Helmet_DG: VES_CH252A
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Pathfinder Helmet (DES/G)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Pathfinder_DES_H.paa",
-			"Helmets\Textures\AA_Gold_Visor.paa"
-		};
-	};
-	class Pathfinder_Helmet_DS: VES_CH252A
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Pathfinder Helmet (DES/S)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Pathfinder_DES_H.paa",
-			"Helmets\Textures\AA_SILV_Visor.paa"
-		};
-	};
-	class Pathfinder_Helmet_DG_dp: VES_CH252A_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Pathfinder Helmet (DP)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Pathfinder_DES_H.paa",
-			"Helmets\Textures\AA_Clear_Visor.paa"
-		};
-	};
-	class Pathfinder_Helmet_DS_dp: VES_CH252A_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Pathfinder Helmet (DP)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Pathfinder_DES_H.paa",
-			"Helmets\Textures\AA_Clear_Visor.paa"
-		};
-	};
-	class Icarus_Helmet: VES_CH252A
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Icarus Helmet";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Icarus_Helmet.paa",
-			"Helmets\Textures\Icarus_Visor.paa"
-		};
-	};
-	class Icarus_Helmet_dp: VES_CH252A_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Icarus Helmet";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Icarus_Helmet.paa",
-			"Helmets\Textures\AA_Clear_Visor.paa"
-		};
-	};
-	class Ranger_Helmet: TCF_Reach_Scout_Helmet
-	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
 		displayName="[6th] Ranger Helmet";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Helmets";
+			Variant="Ranger";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Ranger_Helmet.paa",
-			"Helmets\Textures\Ranger_Visor.paa"
+			"Helmets\Textures\Tombstone\Ranger\Ranger_H.paa",
+			"Helmets\Textures\Tombstone\Ranger\Ranger_V.paa"
 		};
-		hiddenSelectionsMaterials[] =
+		class ItemInfo: ItemInfo
 		{
-			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
-			"Helmets\Textures\Materials\visor.rvmat"
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Ranger\Ranger_H.paa",
+				"MA_Armor\data\Helmets\HR_ODST\HR_ODST_Visor_Blue_co.paa"
+			};
 		};
 	};
-	class Ranger_Helmet_dp: TCF_Reach_Scout_Helmet
+	
+	//Tombstone Customs
+	class Cherryy_Helmet: MA_M56SR_Helmet
 	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Ranger Helmet";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\Ranger_Helmet.paa",
-			"Helmets\Textures\Ranger_Visor.paa"
-		};
-	};
-	class A_Chelkar_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (A. Chelkar)";
+		displayName="[6th] Command Helmet (Cherryy)";
+		class XtdGearInfo
+		{
+			model="6th_Customs_Helmets";
+			Variant="Cherryy";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\A_Chelkar_Helmet.paa",
-			"Helmets\Textures\A_Chelkar_Visor.paa"
+			"Helmets\Textures\Tombstone\Command\Cherryy_H.paa",
+			"Helmets\Textures\Tombstone\Command\Cherryy_V.paa"
 		};
-	};
-	class A_Chelkar_Helmet_dp: VES_CH252D_dp
-	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (A. Chelkar)";
-		hiddenSelectionsTextures[]=
+		class ItemInfo: ItemInfo
 		{
-			"Helmets\Textures\A_Chelkar_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Command\Cherryy_H.paa",
+				"Helmets\Textures\Tombstone\Command\Cherryy_V.paa"
+			};
 		};
 	};
-	class C_Cherryy_Helmet: TCF_Reach_Scout_Helmet
+	class Delt_Helmet: MA_M56SR_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (C. Cherryy)";
+		displayName="[6th] Templar Helmet (Delt)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Delt";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\C_Cherryy_Helmet.paa",
-			"Helmets\Textures\C_Cherryy_Visor.paa"
+			"Helmets\Textures\Tombstone\Templar\Delt_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
 		};
-		hiddenSelectionsMaterials[]=
+		class ItemInfo: ItemInfo
 		{
-			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
-			"Helmets\Textures\Materials\visor.rvmat"
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Delt_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+			};
 		};
 	};
-	class C_Cherryy_Helmet_dp: TCF_Reach_Scout_Helmet
+	class Gillian_Helmet: MA_M56SR_Helmet
 	{
-		author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (C. Cherryy)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\C_Cherryy_Helmet.paa",
-			"Helmets\Textures\C_Cherryy_Visor.paa"
-		};
-		hiddenSelectionsMaterials[]=
-		{
-			"\TCF_EQUIPMENT\Helmets\Scout\Data\43_Reach_Scout_Helmet.rvmat",
-			"Helmets\Textures\Materials\visor.rvmat"
-		};
-	};
-	class S_Overture_Helmet: VES_CH252D
-	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Custom Helmet (S. Overture)";
+		displayName="[6th] Templar Helmet (Gillian)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Gillian";
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\S_Overture_Helmet.paa",
-			"Helmets\Textures\S_Overture_Visor.paa"
+			"Helmets\Textures\Tombstone\Templar\Gillian_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
 		};
-		hiddenSelectionsMaterials[] =
+		class ItemInfo: ItemInfo
 		{
-			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
-			"Helmets\Textures\Materials\VG_2.RVMAT"
-        };
-	};
-	class S_Overture_Helmet_dp: VES_CH252D_dp
-	{
-				author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Custom Helmet (S. Overture)";
-		hiddenSelectionsTextures[]=
-		{
-			"Helmets\Textures\S_Overture_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Gillian_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+			};
 		};
 	};
-	class Templar_Helmet: VES_CH252D
+	class Leer_Helmet: MA_M56SR_Helmet
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Templar Helmet";
-		hiddenSelectionsTextures[]=
+		displayName="[6th] Templar Helmet (Leer)";
+		class XtdGearInfo
 		{
-			"Helmets\Textures\Templar_Helmet.paa",
-			"Helmets\Textures\Templar_Visor.paa"
+			model="6th_Custom_Helmets";
+			Variant="Leer";
 		};
-		hiddenSelectionsMaterials[] =
-		{
-			"\OPTRE_UNSC_UNITS\Army\data\odst_helmet.rvmat",
-			"Helmets\Textures\Materials\VG_2.RVMAT"
-        };
-	};
-	class Templar_Helmet_dp: VES_CH252D_dp
-	{
-				author="6th STB S-5";
-		scope=1;
-		scopeArsenal=1;
-		displayName="[6th] Templar Helmet";
 		hiddenSelectionsTextures[]=
 		{
-			"Helmets\Textures\Templar_Helmet.paa",
-			"Helmets\Textures\ODST_Clear_Visor.paa"
+			"Helmets\Textures\Tombstone\Templar\Leer_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Leer_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+			};
+		};
+	};
+	class Mango_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Templar Helmet (Mango)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Mango";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Templar\Mango_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Mango_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Templar_V.paa"
+			};
+		};
+	};
+	class Hatt_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Phoenix Helmet (Hatt)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Hatt";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Phoenix\Hatt_H.paa",
+			"Helmets\Textures\Tombstone\Phoenix\Phoenix_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Phoenix\Hatt_H.paa",
+				"Helmets\Textures\Tombstone\Phoenix\Phoenix_V.paa"
+			};
+		};
+	};
+	class Jengus_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Phoenix Helmet (Jengus)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Jengus";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Templar\Jengus_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Phoenix_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Jengus_H.paa",
+				"Helmets\Textures\Tombstone\Templar\Phoenix_V.paa"
+			};
+		};
+	};
+	class Melo_Helmet: MA_M56SR_Helmet
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Phoenix Helmet (Melo)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Helmets";
+			Variant="Melo";
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"Helmets\Textures\Tombstone\Templar\Melo_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Phoenix_V.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			uniformModel="MA_Armor\data\Helmets\HR_ODST\HR_ODST.p3d";
+			hiddenSelectionsTextures[]=
+			{
+				"Helmets\Textures\Tombstone\Templar\Melo_H.paa",
+			"Helmets\Textures\Tombstone\Templar\Phoenix_V.paa"
+			};
 		};
 	};
 };

@@ -2,7 +2,7 @@ class cfgPatches
 {
   class 6STB_6th_Shock_Trooper_Battalion
   {
-    units[]={"6STB_109th_ArmorCrew","6STB_109th_Pilot","6STB_109th_AirCrew","6STB_109th_AirCrew_V","6STB_109th_AT_Specialist","6STB_109th_Autorifleman","6STB_109th_Breacher","6STB_109th_Marksman","6STB_109th_Medic","6STB_109th_RTO","6th_Oryx","6th_Gunfighter_Warlock","FA188_Warlock","6th_Pelican_ST"};
+    units[]={"6STB_109th_ArmorCrew","6STB_109th_Pilot","6STB_109th_AirCrew","6STB_109th_AirCrew_V","6STB_109th_AT_Specialist","6STB_109th_Autorifleman","6STB_109th_Breacher","6STB_109th_Marksman","6STB_109th_Medic","6STB_109th_RTO","6th_Gunfighter_Warlock","FA188_Warlock","6th_Pelican_ST","6th_M12_LRV","6th_Oryx","6th_APC77","6th_APC77_M"};
     weapons[]={"6STB_OPTRE_M7","6STB_OPTRE_M6G_SF_OPTRE_M6G_FlashlightOPTRE_M6G_Scope"};
     requiredVersion=0.1;
     requiredAddons[]={"OPTRE_Weapons_Items","ace_hearing","A3_Weapons_F","OPTRE_Weapons_MG","OPTRE_Weapons_Pistol","OPTRE_UNSC_Units_Army","A3_Characters_F","ace_medical_treatment"};
@@ -54,86 +54,13 @@ class cfgEditorSubcategories
 
 class cfgWeapons
 {
-  class OPTRE_MA5B;
-  class OPTRE_MA45ATAC;
-  class OPTRE_MA37K;
-  class OPTRE_M7;
-  class OPTRE_M73;
-  class OPTRE_M6C;
-  class OPTRE_M41_SSR;
-  class OPTRE_M392_DMR;
-
-  class 6STB_MA5B: OPTRE_MA5B
-  {
-    displayName="MA5B";
-    scope=1;
-    class LinkedItems
-    {
-    };
-  };
-  class 6STB_MA45ATAC: OPTRE_MA45ATAC
-  {
-    displayName="MA45A Combat Shotgun";
-    scope=1;
-    class LinkedItems
-    {
-    };
-  };
-  class 6STB_MA37K: OPTRE_MA37K
-  {
-    displayName="MA37K Carbine";
-    scope=1;
-    class LinkedItems
-    {
-		class LinkedItemsOptic
-		{
-			slot='CowsSlot";
-			item="OPTRE_M12_OPTIC";
-		};
-    };
-  };
-  class 6STB_M7: OPTRE_M7
-  {
-    displayName="M7/Caseless SMG";
-    scope=1;
-    class LinkedItems
-    {
-    };
-  };
-  class 6STB_M73: OPTRE_M73
-  {
-    displayName="M73 LMG";
-    scope=1;
-    class LinkedItems
-    {
-      class LinkedItemsOptic
-      {
-        slot="CowsSlot";
-        item="OPTRE_M73_SMARTLINK";
-      };
-	};
-  };
-  class 6STB_M6C: OPTRE_M6C
-  {
-    displayName="M6C Magnum";
-    scope=1;
-    class LinkedItems
-    {
-    };
-  };
-  class 6STB_M392: OPTRE_M392_DMR
-  {
-    displayName="M392 DMR";
-    scope=1;
-    class LinkedItems
-    {
-      class LinkedItemsOptic
-      {
-        slot="CowsSlot";
-        item="OPTRE_BMR_SCOPE";
-      };
-	};
-  };
+  class 6STB_MA5B;
+  class 6STB_MA45ATAC;
+  class 6STB_MA37K;
+  class 6STB_M7;
+  class 6STB_M73;
+  class 6STB_M6C;
+  class 6STB_M392;
 };
 
 class cfgVehicles
@@ -372,12 +299,25 @@ class cfgVehicles
 	class OPTRE_M494: APC_Tracked_03_base_F
 	{
 	};
-	class 6th_M12LRV: OPTRE_M12_LRV
+	class B_APC_Wheeled_01_base_F;
+	class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F
+	{
+		class AnimationSources;
+	};
+	class VES_IFV76_A: B_APC_Wheeled_01_cannon_F
+	{
+	};
+	class VES_IFV76: VES_IFV76_A
+	{
+	};
+	
+	//Motorized
+	class 6th_M12_LRV: OPTRE_M12_LRV
 	{
 		author="6th STB S-5";
 		scope=2;
 		scopeCurator=2;
-		displayName="[6th] M12 LRV (Jungle)";
+		displayName="[6th] M12 LRV (ATACS)";
 		faction="6STB_6th_Shock_Trooper_Battalion";
 		editorCategory="6th_Shock_Trooper_Battalion";
 		editorSubcategory="6STB_Mechanized";
@@ -392,11 +332,43 @@ class cfgVehicles
 			"\OPTRE_Vehicles\warthog\data\turrets\sight_co.paa"
 		};
 	};
+	
+	//Mechanized
+	class 6th_APC77: VES_IFV76
+	{
+		displayName="APC-77 Badger (Transport)";
+		faction="6STB_6th_Shock_Trooper_Battalion";
+		editorCategory="6th_Shock_Trooper_Battalion";
+		editorSubcategory="6STB_Mechanized";
+		hiddenSelectionsTextures[]=
+		{
+			"Vehicles\Ground\APC77\APC77.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_A_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_T_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_CN_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_C_CO.paa"
+		};
+	};
+	class 6th_APC77_M: 6th_APC77
+	{
+		displayName="APC-77 Badger (Medical)";
+		faction="6STB_6th_Shock_Trooper_Battalion";
+		editorCategory="6th_Shock_Trooper_Battalion";
+		editorSubcategory="6STB_Mechanized";
+		hiddenSelectionsTextures[]=
+		{
+			"Vehicles\Ground\APC77_M\APC77_M.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_A_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_T_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_CN_CO.paa",
+			"V_FZ_Ground_Vehicles\data\Honeybadger\V_IFV76_URB_C_CO.paa"
+		};
+	};
 	class 6th_Oryx: OPTRE_M494
 	{
 		scope=2;
 		scopeCurator=2;
-		author="6STB S5";
+		author="R. Walker";
 		displayName="[6th] Oryx IFV";
 		faction="6STB_6th_Shock_Trooper_Battalion";
 		editorCategory="6th_Shock_Trooper_Battalion";
@@ -995,6 +967,8 @@ class cfgVehicles
 		};
 		crew="6STB_109th_ArmorCrew";
 	};
+	
+	//Rotary
 	class B_Heli_Attack_01_Dynamicloadout_F;
 	class 6th_Gunfighter_Warlock: B_Heli_Attack_01_Dynamicloadout_F
 	{
@@ -1015,7 +989,7 @@ class cfgVehicles
 		hiddenSelectionsTextures[]=
 		{
 			"Vehicles\Aircraft\Rotary\V-1_Gunfighter.paa"
-		};
+		};		
 	};
 	class VES_D77HTCI_A;
 	class 6th_Pelican_ST: VES_D77HTCI_A
@@ -1040,6 +1014,7 @@ class cfgVehicles
 		};
 	};
 	
+	//Fixed Wing
 	class SensorTemplateIR;
 	class SensorTemplateVisual;
 	class SensorTemplatePassiveRadar;
