@@ -9,6 +9,90 @@ class CfgPatches
 		weapons[]={};
 	};
 };
+
+class XtdGearModels
+{
+	class CfgWeapons
+	{
+		class 6th_Standard_Vests
+		{
+			label = "[6th] M56 Squad Variants";
+			author = "6STB Dev Team";
+			options[] = {"Variant"};
+			class Variant
+			{
+				values[] = {"Command","Phoenix","Phoenix_C","Spectre","Spectre_C","Templar","Templar_C","Ranger"};
+				class Command
+				{
+					label = "Command";
+				};
+				class Phoenix
+				{
+					label = "Phoenix";
+				};
+				class Phoenix_C
+				{
+					label = "Phoenix (C)";
+				};
+				class Spectre
+				{
+					label = "Spectre";
+				};
+				class Spectre_C
+				{
+					label = "Spectre (C)";
+				};
+				class Templar
+				{
+					label = "Templar";
+				};
+				class Templar_C
+				{
+					label = "Templar (C)";
+				};
+				class Ranger
+				{
+					label = "Ranger";
+				};
+			};
+		};
+		class 6th_Custom_Vests
+		{
+			label = "[6th] M56 Custom Variants";
+			author = "6STB Dev Team";
+			options[] = {"Variant"};
+			class Variant
+			{
+				values[] = {"Leer","Walker","Munchlax","Angoth","Doyle","Justinian"};
+				class Leer
+				{
+					label = "Leer";
+				};
+				class Walker
+				{
+					label = "Walker";
+				};
+				class Munchlax
+				{
+					label = "Munchlax";
+				};
+				class Angoth
+				{
+					label = "Angoth";
+				};
+				class Doyle
+				{
+					label = "Doyle";
+				};
+				class Justinian
+				{
+					label = "Justinian";
+				};
+			};
+		};
+	};
+};
+
 class CfgWeapons
 {
 	class HeadgearItem;
@@ -17,3712 +101,1338 @@ class CfgWeapons
 	class VestItem;
 	class Uniform_Base;
 	class UniformItem;
-	class VES_M52D_Rifleman;
-	class VES_M52A_MAR_Rifleman_A;
-	class VES_CH252D;
-	class VES_CH252D_dp;
-	class VES_S1ONIR;
-	class VES_S1ONIR_dp;
+	class U_B_CombatUniform_mcam;
+	class MA_H3_ODST_Vest;
+	class MA_M56S_Vest;
 	class LM_OPCAN_ODST_H2A_UNI;
-	class ODST_Vest: VES_M52D_Rifleman
+	class MA_Soldier_Base;
+	
+	class MA_M56R_Vest: MA_M56S_Vest
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] ODST Vest";
+		displayName="[MA] M56R Combat Armor";
+		model="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+		picture="MA_Armor\data\Icons\H3ODST_Vest.paa";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\ODST_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Upper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Lower_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				//"A_KneesMarLeft",	//Marine Knee Plates Left
-				//"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Tombstone_Company_Rifleman: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone Company Rifleman";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Company_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Tombstone_Company_Demolition: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone Company Demolition";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Company_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBRight",
-				"AS_ODSTLeft",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_Knife",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_Sniper",
-				"APO_AR",
-				"APO_BR",
-				"APO_Knife",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Upper_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Lower_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_Company_Marksman: VES_M52D_Rifleman
+	class MA_M56R_Light_Vest: MA_M56R_Vest
 	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone Company Marksman";
+		displayName="[MA] M56R Combat Armor (Light)";
+		class XtdGearInfo
+		{
+			model="MA_Standard_Vests";
+			Variant="M56R_Light";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"Reach_Forearm_Left",
+			"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Pauldron_Left",
+			"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Company_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Upper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Lower_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_GL",
-				"AP_Knife",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"AP_Smoke",
-				"APO_AR",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"Reach_Forearm_Left",
+				"Reach_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Pauldron_Left",
+				"Reach_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower",
+				"Forearm_Vent_Left",
+				"Forearm_Vent_Right"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Upper_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Reach_Armor_Lower_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_Company_Grenadier: VES_M52D_Rifleman
+	
+	//Valkyrie
+	class Valkyrie_Walker_V: MA_M56R_Vest
 	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone Company Grenadier";
+		displayName="[6th] Icarus Armor (Walker)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Vests";
+			Variant="Walker";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			//"Reach_Forearm_Left",
+			//"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			//"Reach_Pauldron_Left",
+			//"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Company_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Valkyrie\Walker_VU.paa",
+			"Vests\Textures\Valkyrie\Walker_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+	};
+	class Valkyrie_Munchlax_V: MA_M56R_Light_Vest
+	{
+		displayName="[6th] Valkyrie Armor (Munchlax)";
+		class XtdGearInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
+			model="6th_Custom_Vests";
+			Variant="Munchlax";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			//"Reach_Forearm_Left",
+			//"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			//"Reach_Pauldron_Left",
+			//"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Valkyrie\Munchlax_VU.paa",
+			"Vests\Textures\Valkyrie\Munchlax_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+	};
+	class Valkyrie_Angoth_V: MA_M56R_Light_Vest
+	{
+		displayName="[6th] Valkyrie Armor (Angoth)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Vests";
+			Variant="Angoth";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"Reach_Forearm_Left",
+			"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Pauldron_Left",
+			"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Valkyrie\Angoth_VU.paa",
+			"Vests\Textures\Valkyrie\Angoth_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+	};
+	class Valkyrie_Doyle_V: MA_M56R_Light_Vest
+	{
+		displayName="[6th] Valkyrie Armor (Doyle)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Vests";
+			Variant="Doyle";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"Reach_Forearm_Left",
+			"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Pauldron_Left",
+			"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Valkyrie\Doyle_VU.paa",
+			"Vests\Textures\Valkyrie\Doyle_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+	};
+	class Valkyrie_Justinian_V: MA_M56R_Light_Vest
+	{
+		displayName="[6th] Valkyrie Armor (Justinian)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Vests";
+			Variant="Justinian";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"Reach_Forearm_Left",
+			"Reach_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Pauldron_Left",
+			"Reach_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower",
+			"Forearm_Vent_Left",
+			"Forearm_Vent_Right"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Valkyrie\Justinian_VU.paa",
+			"Vests\Textures\Valkyrie\Justinian_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Sniper_Shoulders\Sniper_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\CQB_Shoulders\CQB_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+	};
+	
+	//Tombstone
+	class Command_Armor: MA_M56R_Vest
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Tombstone Command Armor";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Command";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Command\TC_VU.paa",
+			"Vests\Textures\Tombstone\Command\TC_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Command\TC_Sniper.paa",
+			"Vests\Textures\Tombstone\Command\TC_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Command\TC_VU.paa",
+				"Vests\Textures\Tombstone\Command\TC_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Command\TC_Sniper.paa",
+				"Vests\Textures\Tombstone\Command\TC_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_Company_Sniper: VES_M52D_Rifleman
+	class Spectre_Armor: MA_M56R_Vest
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone Company Sniper";
+		displayName="[6th] Spectre Squad Armor";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Spectre";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Company_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_VU.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_Sniper.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTLeft",
-				"AS_ODSTRight",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"APO_AR",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_Pouch.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_VU.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_Sniper.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_NCO_Rifleman: VES_M52D_Rifleman
+	class Spectre_C_Armor: MA_M56R_Vest
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO Rifleman";
+		displayName="[6th] Spectre Armor (Corpsman)";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Spectre_C";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_NCO_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_Corpsman_VU.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_Sniper.paa",
+			"Vests\Textures\Tombstone\Spectre\Spectre_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_Knife",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_Corpsman_VU.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_Sniper.paa",
+				"Vests\Textures\Tombstone\Spectre\Spectre_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_NCO_Demolition: VES_M52D_Rifleman
+	class Templar_Armor: MA_M56R_Vest
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO Demolition";
+		displayName="[6th] Templar Squad Armor";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Templar";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_NCO_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_VU.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBRight",
-				"AS_ODSTLeft",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_Knife",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_Sniper",
-				"APO_AR",
-				"APO_BR",
-				"APO_Knife",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_VU.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_NCO_Marksman: VES_M52D_Rifleman
+	class Templar_C_Armor: MA_M56R_Vest
 	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO Marksman";
+		displayName="[6th] Templar Armor (Corpsman)";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Templar_C";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_NCO_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_Corpsman_VU.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_GL",
-				"AP_Knife",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"AP_Smoke",
-				"APO_AR",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_Corpsman_VU.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
-	class Tombstone_NCO_Grenadier: VES_M52D_Rifleman
+	class Phoenix_Armor: MA_M56R_Vest
 	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO Grenadier";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_NCO_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",
-				"camo2",
-				"camo3",
-				"camo4",
-				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
-			};
-		};
-	};
-	class Tombstone_NCO_Sniper: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone NCO Sniper";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_NCO_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",
-				"camo2",
-				"camo3",
-				"camo4",
-				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTLeft",
-				"AS_ODSTRight",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"APO_AR",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"CustomKit_Scorch"
-			};
-		};
-	};
-	class Tombstone_Medic_Rifleman: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Tombstone Medic";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Tombstone_Medic_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",
-				"camo2",
-				"camo3",
-				"camo4",
-				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_Knife",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
-			};
-		};
-	};
-	class Anvil_Squad_Rifleman: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayname="[6th] Anvil Squad Armor";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"OPTRE_UNSC_Units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"OPTRE_UNSC_Units\Army\data\ghillie_woodland_co",
-			"Vests\Textures\Anvil_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Drengr_Squad_Rifleman: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Drengr Squad Armor";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Drengr_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Drengr_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Phoenix_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
 		scope=2;
 		scopeArsenal=2;
 		displayName="[6th] Phoenix Squad Armor";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Phoenix";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
 		hiddenSelectionsTextures[]=
 		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Phoenix_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Phoenix_Vest.paa"
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_VU.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_Sniper.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 		};
-		class ItemInfo: VestItem
+		class ItemInfo: ItemInfo
 		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
 			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
 			hiddenSelections[]=
 			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class R_Walker_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (R. Walker)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\R_Walker_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\R_Walker_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class S_Marbo_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (S. Marbo)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\S_Marbo_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				//"AP_MGThigh",	//Big Pouch right side of right thigh
-				"A_ODST",		//ODST Extra Plate and bracers
-				"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				//"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class A_Avalanche_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (A. Avalanche)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\A_Avalanche_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				//"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				//"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class R_Kay_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (R. Kay)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\R_Kay_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class H_Lucas_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (H. Lucas)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\H_Lucas_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\H_Lucas_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				//"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class K_Kat_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (K. Kat)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\K_Kat_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				//"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				//"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				//"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				//"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				//"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class M_Munchlax_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (M. Munchlax)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\H_Lucas_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\M_Munchlax_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				//"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				//"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				//"APO_Knife",	//Back Knife
-				//"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				//"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class M_Justinian_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (M. Justinian)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\M_Justinian_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				//"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class J_Long_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (J. Long)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\J_Long_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\J_Long_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				//"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				//"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				//"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				//"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class M_Kong_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (M. Kong)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"V_FZ_Armor\Data\Vests\V_M52_L_URB_CO",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\M_Kong_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				//"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class J_Kraken_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (J. Kraken)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\J_Kraken_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\J_Kraken_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				//"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-		class M_Hatter_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (M. Hatter)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Phoenix_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\M_Hatter_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				//"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				//"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class S_Orm_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (S. Orm)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Drengr_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\S_Orm_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				//"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Ranger_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Ranger Armor";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Ranger_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Ranger_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class Templar_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Templar Armor";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Templar_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Templar_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				//"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	};
-	class C_Cherryy_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (C. Cherryy)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\C_Cherryy_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\C_Cherryy_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				//"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				//"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				//"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				//"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				//"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	}
-		class S_Overture_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Custom Armor (S. Overture)";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\vest_odst_co.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\S_Overture_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\S_Overture_Vest.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",		//Ignore, is banned
-				"camo2",	//Ignore, is banned
-				"camo3",	//Ignore, is banned
-				"camo4",	//Ignore, is banned
-				"camo5",	//Ignore, is banned
-				"A_Ghillie",	//Ghillie
-				//"A_KneesLeft",	//ODST Knee Plates Left
-				//"A_KneesRight",	//ODST Knee Plates Right
-				"A_KneesMarLeft",	//Marine Knee Plates Left
-				"A_KneesMarRight",	//Marine Knee Plates Right
-				//"A_ShinArmorLeft",	//Shin Armor Left
-				//"A_ShinArmorRight",	//Shin Armor Right
-				//"A_ThighArmorLeft",		//Base Thigh Armor Left
-				//"A_ThighArmorRight",	//Base Thigh Armor Right
-				//"AP_Thigh",		//Pouch on left side of left thigh
-				"AP_MGThigh",	//Big Pouch right side of right thigh
-				//"A_ODST",		//ODST Extra Plate and bracers
-				//"A_TacPad",		//Tacpad on left wrist
-				"AP_Rounds",	//Sniper Rounds on left shoulder plate
-				//"A_ChestArmor",	//Base Armor plate
-				"AP_AR",	//3x Marine Assault Rifle Magazines
-				"AP_BR",	//3x Marine Battle Rifle Magazines
-				"AP_Canteen",	//Canteen on left hip
-				"AP_Frag",	//Right side hip frag grenade
-				"AP_GL",	//Grenade Belt on right side
-				//"AP_Knife",	//Chest Knife, left collar
-				"AP_Pack",	//Marine Chest Pack
-				//"AP_Pistol",	//Pistol Mags Right Hip
-				"AP_SG",	//Shotgun Shells Right Shoulder Front
-				"AP_SMG",	//3 SMG pouches either side of stomach
-				"AP_Smoke",	//2x Smoke grenade left hip
-				"AP_Sniper",	//Marine 2 SRS mags either side of stomach
-				"APO_AR",	//ODST 2 Mag Pouches either side of stomach
-				//"APO_BR",	//ODST 2 Mag Pouches either side of stomach
-				"APO_Sniper",	//2 mag pouches either side of stomach
-				"APO_Knife",	//Back Knife
-				"APO_SMG",		//Mags both side of ODST chest piece
-				//"AS_BaseLeft",			//Kevlar Wraps under Pads on shoulder
-				//"AS_BaseRight",			//Kevlar Wraps under Pads on shoulder
-				"AS_LargeLeft",			//Marine Large Left Shoulder Plate
-				"AS_LargeRight",		//Marine Large Right Shoulder Plate
-				"AS_MediumLeft",		//Marine Medium Left Shoulder Plate
-				"AS_MediumRight",		//Marine Medium Right Shoulder Plate
-				//"AS_ODSTCQBLeft",		//ODST CQB Shoulder Left
-				"AS_ODSTCQBRight",		//ODST CQB Shoulder Right
-				"AS_ODSTLeft",			//ODST Shoulder Left
-				"AS_ODSTRight",			//ODST Shoulder Right
-				"AS_ODSTSniperLeft",	//ODST Sniper Shoulder Left
-				//"AS_ODSTSniperRight",	//ODST Sniper Shoulder Right
-				"AS_SmallLeft",			//Marine Small Left Shoulder Plate
-				"AS_SmallRight",		//Marine Small Right Shoulder Plate
-				"CustomKit_Scorch"		//Knife on back of left shoulder and back, GL Rounds, ODST AR Mags, and Thigh Pouch
-			};
-		};
-	}
-	class PF_Vest: VES_M52D_Rifleman
-	{
-		author="6th STB S-5";
-		scope=2;
-		scopeArsenal=2;
-		displayName="[6th] Pathfinder Desert Armor";
-		hiddenSelectionsTextures[]=
-		{
-			"OPTRE_UNSC_Units\Army\data\Pathfinder_DES_UA.paa",
-			"optre_unsc_units\army\data\armor_odst_co.paa",
-			"Vests\Textures\Pathfinder_DES_L_Legs.paa",
-			"optre_unsc_units\army\data\ghillie_woodland_co",
-			"Vests\Textures\Pathfinder_DES_V1.paa"
-		};
-		class ItemInfo: VestItem
-		{
-			mass=80;
-			containerClass="Supply230";
-			uniformModel="\OPTRE_UNSC_Units\Army\armor.p3d";
-			vestType="Rebreather";
-			class HitpointsProtectionInfo
-			{
-				class Abdomen
-				{
-					armor=45;
-					hitpointName="HitAbdomen";
-					passThrough=0.5;
-				};
-				class Arms: Abdomen
-				{
-					hitpointName="HitArms";
-				};
-				class Body: Abdomen
-				{
-					hitpointName="HitBody";
-				};
-				class Chest: Abdomen
-				{
-					hitpointName="HitChest";
-				};
-				class Diaphragm: Abdomen
-				{
-					hitpointName="HitDiaphragm";
-				};
-				class Hands: Abdomen
-				{
-					hitpointName="HitHands";
-				};
-				class Legs: Abdomen
-				{
-					hitpointName="HitLegs";
-				};
-				class Neck: Abdomen
-				{
-					hitpointName="HitNeck";
-				};
-				class Pelvis: Abdomen
-				{
-					hitpointName="HitPelvis";
-				};
-			};
-			hiddenSelections[]=
-			{
-				"camo",
+				"camo1",
 				"camo2",
 				"camo3",
 				"camo4",
 				"camo5",
-				"A_Ghillie",
-				"A_KneesMarLeft",
-				"A_KneesMarRight",
-				"AS_LargeLeft",
-				"AS_LargeRight",
-				"AS_MediumLeft",
-				"AS_MediumRight",
-				"AS_ODSTCQBLeft",
-				"AS_ODSTCQBRight",
-				"AS_ODSTSniperLeft",
-				"AS_ODSTSniperRight",
-				"AS_SmallLeft",
-				"AS_SmallRight",
-				"AP_Canteen",
-				"AP_GL",
-				"AP_Knife",
-				"AP_MGThigh",
-				"AP_AR",
-				"AP_BR",
-				"AP_Pack",
-				"AP_Pistol",
-				"AP_Rounds",
-				"AP_SG",
-				"AP_SMG",
-				"AP_Sniper",
-				"AP_Thigh",
-				"APO_BR",
-				"APO_Knife",
-				"APO_SMG",
-				"APO_Sniper",
-				"CustomKit_Scorch"
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_VU.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_Sniper.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+			};
+		};
+	};
+	class Phoenix_C_Armor: MA_M56R_Vest
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Phoenix Armor (Corpsman)";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Phoenix_C";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_Corpsman_VU.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_Sniper.paa",
+			"Vests\Textures\Tombstone\Phoenix\Phoenix_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			vestType="Rebreather";
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
+			hiddenSelections[]=
+			{
+				"camo1",
+				"camo2",
+				"camo3",
+				"camo4",
+				"camo5",
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_Corpsman_VU.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_Sniper.paa",
+				"Vests\Textures\Tombstone\Phoenix\Phoenix_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+			};
+		};
+	};
+	class Ranger_Armor: MA_M56R_Vest
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Ranger Squad Armor";
+		class XtdGearInfo
+		{
+			model="6th_Standard_Vests";
+			Variant="Ranger";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Ranger\Ranger_VU.paa",
+			"Vests\Textures\Tombstone\Ranger\Ranger_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Ranger\Ranger_Sniper.paa",
+			"Vests\Textures\Tombstone\Ranger\Ranger_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			vestType="Rebreather";
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
+			hiddenSelections[]=
+			{
+				"camo1",
+				"camo2",
+				"camo3",
+				"camo4",
+				"camo5",
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Ranger\Ranger_VU.paa",
+				"Vests\Textures\Tombstone\Ranger\Ranger_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Ranger\Ranger_Sniper.paa",
+				"Vests\Textures\Tombstone\Ranger\Ranger_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+			};
+		};
+	};
+
+	
+	//Tombstone Customs
+	class Leer_Armor: MA_M56R_Light_Vest
+	{
+		scope=2;
+		scopeArsenal=2;
+		displayName="[6th] Templar Armor (Leer)";
+		class XtdGearInfo
+		{
+			model="6th_Custom_Vests";
+			Variant="Leer";
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"camo7",
+			"camo8",
+			"camo9",
+			"camo10",
+			"H3_Forearm_Left",
+			//"H3_Forearm_Right",
+			"H3_Pauldron_Left",
+			//"H3_Pauldron_Right",
+			"Reach_Shoulder_Radio_Left",
+			//"Reach_Shoulder_Radio_Right",
+			"Reach_Sniper_Pauldron_Left",
+			"Reach_Sniper_Pauldron_Right",
+			//"Reach_CQB_Pauldron_Left",
+			"Reach_CQB_Pauldron_Right",
+			"Thigh_Pouch",
+			"H3_Armor_Upper",
+			"H3_Armor_Lower"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+			"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+			"Vests\Textures\Tombstone\Templar\Leer_VU.paa",
+			"Vests\Textures\Tombstone\Templar\Leer_VL.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+			"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+			"Vests\Textures\Tombstone\Templar\Leer_CQB.paa",
+			"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
+		};
+		class ItemInfo: ItemInfo
+		{
+			vestType="Rebreather";
+			uniformModel="MA_Armor\data\Vests\H3_ODST\H3_ODST_Armor.p3d";
+			containerClass="Supply200";
+			hiddenSelections[]=
+			{
+				"camo1",
+				"camo2",
+				"camo3",
+				"camo4",
+				"camo5",
+				"camo6",
+				"camo7",
+				"camo8",
+				"camo9",
+				"camo10",
+				"H3_Forearm_Left",
+				//"H3_Forearm_Right",
+				"H3_Pauldron_Left",
+				//"H3_Pauldron_Right",
+				"Reach_Shoulder_Radio_Left",
+				//"Reach_Shoulder_Radio_Right",
+				"Reach_Sniper_Pauldron_Left",
+				"Reach_Sniper_Pauldron_Right",
+				//"Reach_CQB_Pauldron_Left",
+				"Reach_CQB_Pauldron_Right",
+				"Thigh_Pouch",
+				"H3_Armor_Upper",
+				"H3_Armor_Lower"
+			};
+			hiddenSelectionsTextures[]=
+			{
+				"MA_Armor\data\Vests\H3_ODST\H3_Upper_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\H3_Lower_Armor_co.paa",
+				"MA_Armor\data\Vests\H3_ODST\Addons\Thigh_Pouch_co.paa",
+				"Vests\Textures\Tombstone\Command\Leer_VU.paa",
+				"Vests\Textures\Tombstone\Command\Leer_VL.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Canisters_co.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Forearm_Vents_co.paa",
+				"Vests\Textures\Tombstone\Templar\Templar_Sniper.paa",
+				"Vests\Textures\Tombstone\Templar\Leer_CQB.paa",
+				"MA_Armor\data\Vests\Reach_ODST\Addons\Reach_Shoulder_Radio\Shoulder_Radio_Green_co.paa"
 			};
 		};
 	};
